@@ -1,20 +1,35 @@
-# Brechó App — TP1
+# 👗 Brechó App — Projeto de Software
 
-Aplicação web simples para gestão de um brechó: cadastro de peças, catálogo público e controle básico de estoque.
+Aplicação web para gestão e divulgação de um brechó.  
+Este repositório contém as entregas do Trabalho Prático (TP) da disciplina, organizadas por sprints (TP1 a TP4).
 
-## Documentação (TP1)
-- [Requisitos](./docs/requisitos.md)
-- [Planejamento (TP1 + link do Project)](./docs/planejamento.md)
-- [Casos de Uso](./docs/casos-de-uso.md)
+---
 
-## Objetivo do Projeto
-Organizar estoque e catálogo de um brechó, facilitando a gestão e a divulgação dos produtos.
+## 📌 Entregas
 
-## Tecnologias (pretendidas)
-- Front-end: HTML/CSS/JS (ou React, se avançar)
-- Back-end: a definir (ex.: Node/Express ou Python/Flask) — **não obrigatório na TP1**
-- Banco: a definir (ex.: SQLite)
+### ✅ TP1 – Definição do Problema e Planejamento Inicial
+- [Requisitos funcionais e não funcionais](./docs/requisitos.md)
+- [Planejamento (TP1)](./docs/planejamento.md)
+- [Casos de Uso (com diagrama)](./docs/casos-de-uso.md)
 
-## Como rodar (futuro)
-Instruções serão adicionadas nas próximas entregas (TP2/TP3).
+**Resumo**  
+- Repositório público criado no GitHub.  
+- Documentação em Markdown organizada em `/docs`.  
+- GitHub Projects criado com backlog de requisitos e tarefas planejadas para o TP2.  
+- Diagrama de Caso de Uso publicado.  
+
+---
+
+### ✅ TP2 – Projeto de Software (Arquitetura)
+- [Documentação da Arquitetura (C4 Model, tecnologias e justificativas)](./docs/arquitetura.md)
+
+**Resumo**  
+- Arquitetura modelada utilizando **C4 Model (níveis C1, C2 e C3)**.  
+- Definidas tecnologias de front-end (React, Tailwind, Vite), back-end (Node.js, Express, Prisma) e banco (SQLite → PostgreSQL).  
+- Justificativas arquiteturais documentadas.  
+- GitHub Projects atualizado, com tarefas planejadas para o **TP3**.  
+
+---
+
+## 📂 Estrutura do Repositório
 
