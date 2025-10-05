@@ -63,3 +63,60 @@ flowchart TB
     WebUI --> API
     API --> DB
     API --> Store
+
+### 2.2 C2 — Contêineres (Mermaid)
+
+flowchart LR
+    subgraph Browser["Browser (React SPA)"]
+      UI["React + Vite (TypeScript)\nTailwind"]
+    end
+
+    subgraph Server["Back-end (Node.js/Express)"]
+      Controller["Controllers (HTTP)"]
+      Service["Services (Regras de Negócio)"]
+      Repo["Repositories (Prisma)"]
+      Auth["Auth (JWT)"]
+    end
+
+    DB[(SQLite / PostgreSQL)]
+    Store[(Uploads locais / Provedor externo futuramente)]
+
+    UI -- REST/JSON --> Controller
+    Controller --> Auth
+    Controller --> Service
+    Service --> Repo
+    Repo --> DB
+    Service --> Store
+
+### 2.3 C3 — Componentes do Back-end (Mermaid)
+flowchart TB
+    subgraph API["Express API"]
+      subgraph Controllers
+        C_Auth["AuthController"]
+        C_Item["ItemController"]
+      end
+
+      subgraph Services
+        S_Auth["AuthService"]
+        S_Item["ItemService"]
+      end
+
+      subgraph Repos
+        R_User["UserRepository (Prisma)"]
+        R_Item["ItemRepository (Prisma)"]
+      end
+
+      JWT["JWT Provider"]
+      Uploader["Uploader (filesystem)"]
+      Validator["DTO/Schema Validator (zod)"]
+    end
+
+    DB[(DB)]
+    FS[(uploads/) ]
+
+    C_Auth --> S_Auth --> R_User --> DB
+    C_Item --> Validator
+    C_Item --> S_Item --> R_Item --> DB
+    S_Item --> Uploader --> FS
+    S_Auth --> JWT
+
