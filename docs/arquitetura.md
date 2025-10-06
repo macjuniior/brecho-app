@@ -50,7 +50,6 @@ flowchart TB
     API --> DB
     API --> Store
 
-### 2.2 C2 — Contêineres
 flowchart LR
     %% Containers overview
     subgraph Browser["Browser (React SPA)"]
@@ -75,17 +74,3 @@ flowchart LR
     Repo --> DB
     Service --> Store
 
-
----
-
-### 2.3 C3 — Componentes do Back-end
-*(insira aqui o diagrama que você vai desenhar no estilo do C1)*
-
-O diagrama de componentes detalha o back-end em módulos internos:
-
-- **Controllers**: recebem requisições HTTP (ex.: `ItemController`, `AuthController`).
-- **Services**: aplicam regras de negócio (ex.: `ItemService`, `AuthService`).
-- **Repositories**: acesso ao banco com Prisma (ex.: `ItemRepository`, `UserRepository`).
-- **JWT Provider**: autenticação com tokens.
-- **Uploader**: gestão de imagens.
-- **Validator**: validação dos dados de entrada.
