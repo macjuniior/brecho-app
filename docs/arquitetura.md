@@ -49,7 +49,9 @@ flowchart TB
     WebUI --> API
     API --> DB
     API --> Store
-
+```
+### 2.2 C2 — Contêineres
+```mermaid
 flowchart LR
     subgraph Browser["Browser (React SPA)"]
       UI["React + Vite (TypeScript)\nTailwindCSS"]
