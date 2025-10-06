@@ -53,7 +53,6 @@ flowchart TB
 ### 2.2 C2 — Contêineres
 ```mermaid
 flowchart LR
-    %% Containers overview
     subgraph Browser["Browser (React SPA)"]
       UI["React + Vite (TypeScript)\nTailwindCSS"]
     end
@@ -68,10 +67,10 @@ flowchart LR
     DB[(SQLite / PostgreSQL)]
     Store[(Image Storage\n(local uploads / external provider))]
 
-    %% Connections
     UI -- REST / JSON --> Controller
     Controller --> Auth
     Controller --> Service
     Service --> Repo
     Repo --> DB
     Service --> Store
+
