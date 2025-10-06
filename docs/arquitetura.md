@@ -73,4 +73,39 @@ flowchart LR
     Service --> Repo
     Repo --> DB
     Service --> Store
+```
+
+### 2.3 C3 — Componentes do Back-end
+```mermaid
+flowchart TB
+    subgraph API["Express API"]
+      subgraph Controllers
+        C_Auth["AuthController"]
+        C_Item["ItemController"]
+      end
+
+      subgraph Services
+        S_Auth["AuthService"]
+        S_Item["ItemService"]
+      end
+
+      subgraph Repositories
+        R_User["UserRepository (Prisma)"]
+        R_Item["ItemRepository (Prisma)"]
+      end
+
+      JWT["JWT Provider"]
+      Uploader["Uploader (filesystem or external)"]
+      Validator["Schema Validator"]
+    end
+
+    DB[(Database)]
+    FS[(Uploads folder)]
+
+    C_Auth --> S_Auth --> R_User --> DB
+    C_Item --> Validator
+    C_Item --> S_Item --> R_Item --> DB
+    S_Item --> Uploader --> FS
+    S_Auth --> JWT
+
 
