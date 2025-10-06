@@ -54,7 +54,7 @@ flowchart TB
 ```mermaid
 flowchart LR
     subgraph Browser["Browser (React SPA)"]
-      UI["React + Vite (TypeScript)\nTailwindCSS"]
+      UI["React + Vite (TypeScript) + TailwindCSS"]
     end
 
     subgraph Server["Back-end (Node.js / Express)"]
@@ -65,7 +65,7 @@ flowchart LR
     end
 
     DB[(SQLite / PostgreSQL)]
-    Store[(Image Storage\n(local uploads / external provider))]
+    Store[(Image Storage - local or external)]
 
     UI -- REST / JSON --> Controller
     Controller --> Auth
