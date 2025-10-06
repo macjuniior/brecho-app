@@ -51,14 +51,30 @@ flowchart TB
     API --> Store
 
 ### 2.2 C2 — Contêineres
-*(insira aqui o diagrama que você vai desenhar no estilo do C1)*
+flowchart LR
+    %% Containers overview
+    subgraph Browser["Browser (React SPA)"]
+      UI["React + Vite (TypeScript)\nTailwindCSS"]
+    end
 
-O diagrama de contêineres mostra a divisão do sistema em quatro blocos principais: Front-end, Back-end, Banco de Dados e Armazenamento de Imagens.
+    subgraph Server["Back-end (Node.js / Express)"]
+      Controller["Controllers (HTTP)"]
+      Service["Services (Business Rules)"]
+      Repo["Repositories (Prisma)"]
+      Auth["Auth (JWT)"]
+    end
 
-- **Front-end (React SPA)**: roda no navegador do cliente e exibe o catálogo/telas administrativas.
-- **Back-end (Node.js/Express)**: expõe API REST com regras de negócio.
-- **Banco de Dados (SQLite/PostgreSQL)**: armazena peças, usuários e estoque.
-- **Armazenamento de Imagens**: guarda as fotos das peças cadastradas.
+    DB[(SQLite / PostgreSQL)]
+    Store[(Image Storage\n(local uploads / external provider))]
+
+    %% Connections
+    UI -- REST / JSON --> Controller
+    Controller --> Auth
+    Controller --> Service
+    Service --> Repo
+    Repo --> DB
+    Service --> Store
+
 
 ---
 
